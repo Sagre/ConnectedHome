@@ -1,0 +1,5 @@
+numpy==1.16.4
+matplotlib==3.0.3
+PyAudio==0.2.11
+scipy==1.4.1
+rpi_ws281x==4.2.6
