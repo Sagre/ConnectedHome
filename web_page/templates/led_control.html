@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Power Control</title>
+  </head>
+  <body>
+    {% extends "template.html" %}
+    {% block content %}
+    <h1>Power Control</h1>
+    <div class="widget-type-box">
+      <div class="container">
+        <label>Power</label>
+      </div>
+      <form action="/led_control_request/" method="post" float="left">
+        <input type="hidden" name="id" value="led_power">
+        <input type="hidden" name="req" value="on">
+        <button name="PowerOn" type="submit">On</button>
+      </form>
+      <form action="/led_control_request/" method="post" float="left">
+        <input type="hidden" name="id" value="led_power">
+        <input type="hidden" name="req" value="off">
+        <button name="PowerOff" type="submit">Off</button>
+      </form>
+    </div>
+
+    <div class="widget-type-box">
+      <div class="container">
+        <label>Mode</label>
+      </div>
+      <form action="/led_control_request/" method="post" float="left">
+        <input type="hidden" name="id" value="led_mode">
+        <input type="hidden" name="req" value="sound">
+        <button name="Sound" type="submit">Sound</button>
+      </form>
+      <form action="/led_control_request/" method="post" float="left">
+        <input type="hidden" name="id" value="led_mode">
+        <input type="hidden" name="req" value="wave">
+        <button name="Wave" type="submit">Wave</button>
+      </form>
+      <form action="/led_control_request/" method="post" float="left">
+        <input type="hidden" name="id" value="led_mode">
+        <input type="hidden" name="req" value="color">
+        <button name="Wave" type="submit">Color</button>
+      </form>
+    </div>
+
+    {% endblock %}
+  </body>
+</html>

@@ -129,7 +129,7 @@ class Comm:
         self.client = mqtt_client.Client(client_id)
         self.client.username_pw_set(broker_username, broker_pw)
         self.client.on_connect = self.on_connect
-        self.client.on_disconnect = self.on_disconnect
+        #self.client.on_disconnect = self.on_disconnect
         self.client.on_message = self.on_message
         self.client.on_subscribe = self.on_subscribe
 

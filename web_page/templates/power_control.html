@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Power Control</title>
+  </head>
+  <body>
+    {% extends "template.html" %}
+    {% block content %}
+    <h1>Power Control</h1>
+    <div class="widget-type-box">
+      <div class="container">
+        <label>Weihnachtsbaum</label>
+      </div>
+      <form action="/power_control_request/" method="post" float="left">
+        <input type="hidden" name="id" value="baum">
+        <input type="hidden" name="req" value="on">
+        <button name="baumOn" type="submit">On</button>
+      </form>
+      <form action="/power_control_request/" method="post" float="left">
+        <input type="hidden" name="id" value="baum">
+        <input type="hidden" name="req" value="off">
+        <button name="baumOff" type="submit">Off</button>
+      </form>
+    </div>
+
+    <div class="widget-type-box">
+      <div class="container">
+        <label>Balkon</label>
+      </div>
+      <form action="/power_control_request/" method="post" float="left">
+        <input type="hidden" name="id" value="balcony">
+        <input type="hidden" name="req" value="on">
+        <button name="balconyOn" type="submit">On</button>
+      </form>
+      <form action="/power_control_request/" method="post" float="left">
+        <input type="hidden" name="id" value="balcony">
+        <input type="hidden" name="req" value="on">
+        <button name="balconyOff" type="submit">Off</button>
+      </form>
+    </div>
+
+    {% endblock %}
+  </body>
+</html>

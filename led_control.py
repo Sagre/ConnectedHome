@@ -19,6 +19,9 @@ LED_CHANNEL = 0       # set to '1' for GPIOs 13, 19, 41, 45 or 53
 
 strip = None
 
+power = "off"
+mode = "color"
+
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--leds', type=int, default=100, dest='led_count',
@@ -41,6 +44,20 @@ def set_led_color(led_color_command):
 
     strip.setPixelColorRGB(int(led_color_command["id"]), r, g, b)
 
+# Callback of led_control commands. Expects a dict of the form:
+# {"id": id, "val": val}
+# where id denotes the setting and val the required value of that setting
+def led_control(led_control_command):
+    global power, mode
+    # Disabled/Enable LED strip, switch mode
+    if led_control_command["id"] == "led_power":
+        if led_control_command["val"] = "on":
+            power = "on"
+            colorWipe(strip, Color(1,1,1), 10)
+        if led_control_command["val"] = "off":
+            power = "off"
+            colorWipe(strip, Color(0,0,0), 10)
+
 # Main program logic follows:
 if __name__ == '__main__':
 
@@ -56,6 +73,7 @@ if __name__ == '__main__':
     while not comm.is_connected():
         pass
     comm.subscribe("rgb_values", set_led_color)
+    comm.subscribe("led_request", led_control)
 
     print('Press Ctrl-C to quit.')
     try:
