@@ -111,7 +111,7 @@ class Comm:
 
         return result
 
-    def __init__(self, client_id, configfile = "comm.cfg"):
+    def __init__(self, client_id, configfile = "cfg/comm.cfg"):
         config = configparser.ConfigParser()
         config.read(configfile)
 

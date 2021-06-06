@@ -35,8 +35,24 @@
       </form>
       <form action="/power_control_request/" method="post" float="left">
         <input type="hidden" name="id" value="balcony">
-        <input type="hidden" name="req" value="on">
+        <input type="hidden" name="req" value="off">
         <button name="balconyOff" type="submit">Off</button>
+      </form>
+    </div>
+
+    <div class="widget-type-box">
+      <div class="container">
+        <label>Springbrunnen</label>
+      </div>
+      <form action="/power_control_request/" method="post" float="left">
+        <input type="hidden" name="id" value="fountain">
+        <input type="hidden" name="req" value="on">
+        <button name="fountainOn" type="submit">On</button>
+      </form>
+      <form action="/power_control_request/" method="post" float="left">
+        <input type="hidden" name="id" value="fountain">
+        <input type="hidden" name="req" value="off">
+        <button name="fountainOff" type="submit">Off</button>
       </form>
     </div>
 
